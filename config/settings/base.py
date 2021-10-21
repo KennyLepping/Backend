@@ -186,8 +186,11 @@ CORS_ALLOW_METHODS = (
 )
 
 CSRF_TRUSTED_ORIGINS = (
-    'http://localhost:3000',
+    'https://www.kennylepping.com',
+)
 
+CORS_ORIGIN_WHITELIST = (
+    'https://www.kennylepping.com',
 )
 
 CORS_ALLOW_HEADERS = (
