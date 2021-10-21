@@ -7,8 +7,10 @@ import sys
 def main():
     """Run administrative tasks."""
     # Testing environment variable solution for AWS Lightsail
-    cmd = "source /opt/bitnami/scripts/apache-env.sh"
-    os.system(cmd)
+    if sys.platform != "win32":
+        cmd = "source /opt/bitnami/scripts/apache-env.sh"
+        os.system(cmd)
+
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings.dev')
     try:
         from django.core.management import execute_from_command_line
