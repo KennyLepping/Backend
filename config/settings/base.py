@@ -158,16 +158,12 @@ STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 AWS_S3_CUSTOM_DOMAIN = 'd28gmzqzeakcc8.cloudfront.net'
 # AWS_S3_CUSTOM_DOMAIN = 'www.kennylepping.com'
 
-MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
-# MEDIA_ROOT = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
-
 # Use Cloudfront eventually, some other CDN, etc.
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 CORS_ALLOW_CREDENTIALS = True
 ACCESS_CONTROL_ALLOW_HEADERS = True
 CORS_ORIGIN_ALLOW_ALL = True
-
 
 CORS_ALLOWED_ORIGINS = [
     'https://www.kennylepping.com',
