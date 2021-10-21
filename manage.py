@@ -6,6 +6,8 @@ import sys
 
 def main():
     """Run administrative tasks."""
+    cmd = "source /opt/bitnami/scripts/apache-env.sh"
+    os.system(cmd)
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings.dev')
     try:
         from django.core.management import execute_from_command_line
