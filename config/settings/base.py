@@ -82,6 +82,23 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'django.contrib.auth.backends.RemoteUserBackend',
+]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    ),
+
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+        'rest_framework.permissions.IsAdminUser',
+    ]
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
@@ -106,3 +123,48 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
+
+AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
+
+AWS_STORAGE_BUCKET_NAME = config('S3_BUCKET_NAME')
+
+AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+
+AWS_DEFAULT_ACL = 'public-read'
+
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400',
+}
+
+AWS_LOCATION = 'static'
+
+AWS_QUERYSTRING_AUTH = False
+
+AWS_HEADERS = {
+    'Access-Control-Allow-Origin': '*'
+}
+
+# Refer to https://simpleisbetterthancomplex.com/tutorial/2017/08/01/how-to-setup-amazon-s3-in-a-django-project.html
+# The storage_backends.py section explains managing media assets on S3
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+# For Cloudfront (May change this to the website domain if I host my react app in the same S3 bucket):
+# AWS_S3_CUSTOM_DOMAIN = 'd1taatzf8wz8e0.cloudfront.net' # Original Cloudfront link (Working)
+
+# This Cloudfront link is also hosting a react website so I can host all of my static files in one S3 bucket
+AWS_S3_CUSTOM_DOMAIN = 'd28gmzqzeakcc8.cloudfront.net'
+
+# Use Cloudfront eventually, some other CDN, etc.
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
+CORS_ALLOWED_ORIGINS = [
+    'https://www.kennylepping.com',
+    'https://d28gmzqzeakcc8.cloudfront.net',
+    'http://localhost:3000',
+    'http://127.0.0.1:3000',
+]
