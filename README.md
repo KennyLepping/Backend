@@ -12,3 +12,5 @@ cd /home/bitnami/stack/projects/backend
 source /opt/bitnami/scripts/apache-env.sh
 git pull
 sudo /opt/bitnami/ctlscript.sh restart apache
+
+sudo pip install -r requirements.txt fixed importing pip packages breaking the server
