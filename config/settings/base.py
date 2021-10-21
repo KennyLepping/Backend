@@ -159,7 +159,8 @@ STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 # AWS_S3_CUSTOM_DOMAIN = 'd1taatzf8wz8e0.cloudfront.net' # Original Cloudfront link (Working)
 
 # This Cloudfront link is also hosting a react website so I can host all of my static files in one S3 bucket
-AWS_S3_CUSTOM_DOMAIN = 'd28gmzqzeakcc8.cloudfront.net'
+# AWS_S3_CUSTOM_DOMAIN = 'd28gmzqzeakcc8.cloudfront.net'
+AWS_S3_CUSTOM_DOMAIN = 'www.kennylepping.com'
 
 # Use Cloudfront eventually, some other CDN, etc.
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
