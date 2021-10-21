@@ -67,8 +67,6 @@ TEMPLATES = [
     },
 ]
 
-STATIC_URL = '/static/' # Remove this
-
 WSGI_APPLICATION = 'config.wsgi.application'
 
 # Password validation
