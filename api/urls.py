@@ -1,8 +1,11 @@
-from django.urls import path
-from . import views
+from rest_framework import routers
 
-urlpatterns = [
+from .views import HeroViewset, ContactMessageViewset, ProjectViewset
 
-     path('', views.index, name='index'),
+router = routers.DefaultRouter()
+router.register('api/heroes', HeroViewset)
+router.register('api/contact-messages', ContactMessageViewset)
+router.register('api/projects', ProjectViewset)
 
-]
+
+urlpatterns = router.urls
