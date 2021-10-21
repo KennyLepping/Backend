@@ -1,5 +1,6 @@
 from django.http import HttpResponse
-from django.conf import settings
+import os
+
 
 def index(request):
-    return HttpResponse(f"Testing {settings.DJANGO_SETTINGS_MODULE}")
+    return HttpResponse(f"Testing {os.getenv('DJANGO_SETTINGS_MODULE')}")
