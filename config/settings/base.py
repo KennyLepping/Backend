@@ -165,33 +165,33 @@ AWS_S3_CUSTOM_DOMAIN = 'd28gmzqzeakcc8.cloudfront.net'
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 CORS_ALLOW_CREDENTIALS = True
-ACCESS_CONTROL_ALLOW_HEADERS = True
-CORS_ORIGIN_ALLOW_ALL = True
+# ACCESS_CONTROL_ALLOW_HEADERS = True
+# CORS_ORIGIN_ALLOW_ALL = True
 
 
-# CORS_ALLOWED_ORIGINS = [
+CORS_ALLOWED_ORIGINS = [
+    'https://www.kennylepping.com',
+    'https://d28gmzqzeakcc8.cloudfront.net',
+    'http://localhost:3000',
+    'http://127.0.0.1:3000',
+]
+
+# CORS_ALLOW_METHODS = (
+#     'DELETE',
+#     'GET',
+#     'OPTIONS',
+#     'PATCH',
+#     'POST',
+#     'PUT',
+# )
+
+# CSRF_TRUSTED_ORIGINS = (
 #     'https://www.kennylepping.com',
-#     'https://d28gmzqzeakcc8.cloudfront.net',
-#     'http://localhost:3000',
-#     'http://127.0.0.1:3000',
-# ]
+# )
 
-CORS_ALLOW_METHODS = (
-    'DELETE',
-    'GET',
-    'OPTIONS',
-    'PATCH',
-    'POST',
-    'PUT',
-)
-
-CSRF_TRUSTED_ORIGINS = (
-    'https://www.kennylepping.com',
-)
-
-CORS_ORIGIN_WHITELIST = (
-    'https://www.kennylepping.com',
-)
+# CORS_ORIGIN_WHITELIST = (
+#     'https://www.kennylepping.com',
+# )
 
 # CORS_ALLOW_HEADERS = (
 #     'accept',
