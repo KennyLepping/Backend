@@ -201,3 +201,5 @@ CORS_ALLOW_HEADERS = (
     'x-csrftoken',
     'x-requested-with',
 )
+
+EMAIL_BACKEND = 'django_ses.SESBackend'
