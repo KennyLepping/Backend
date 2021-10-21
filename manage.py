@@ -7,7 +7,7 @@ import sys
 def main():
     """Run administrative tasks."""
     # Testing environment variable solution for AWS Lightsail
-    if sys.platform != "win32":
+    if sys.platform == "linux":
         cmd = "source /opt/bitnami/scripts/apache-env.sh"
         os.system(cmd)
 
