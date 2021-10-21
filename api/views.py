@@ -1,5 +1,6 @@
 from django.http import HttpResponse
+import os
 
 # Create your views here.
 def index(request):
-    return HttpResponse("It's treason, then")
+    return HttpResponse(os.getenv("SECRET_KEY"))
