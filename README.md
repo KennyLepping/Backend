@@ -5,3 +5,10 @@ there
 Use os.getenv("MY_ENV_VARIABLE") or another python native way because I couldn't
 get 3rd party packages to work
 
+TODO:
+While SSHed into server, make a deployment script to:
+
+cd /home/bitnami/stack/projects/backend
+source /opt/bitnami/scripts/apache-env.sh
+git pull
+sudo /opt/bitnami/ctlscript.sh restart apache
