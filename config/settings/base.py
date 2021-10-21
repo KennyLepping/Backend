@@ -147,7 +147,8 @@ AWS_HEADERS = {
 
 # Refer to https://simpleisbetterthancomplex.com/tutorial/2017/08/01/how-to-setup-amazon-s3-in-a-django-project.html
 # The storage_backends.py section explains managing media assets on S3
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+DEFAULT_FILE_STORAGE = 'config.storage_backends.MediaStorage'
 
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
