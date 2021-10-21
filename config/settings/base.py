@@ -169,12 +169,12 @@ ACCESS_CONTROL_ALLOW_HEADERS = True
 CORS_ORIGIN_ALLOW_ALL = True
 
 
-CORS_ALLOWED_ORIGINS = [
-    'https://www.kennylepping.com',
-    'https://d28gmzqzeakcc8.cloudfront.net',
-    'http://localhost:3000',
-    'http://127.0.0.1:3000',
-]
+# CORS_ALLOWED_ORIGINS = [
+#     'https://www.kennylepping.com',
+#     'https://d28gmzqzeakcc8.cloudfront.net',
+#     'http://localhost:3000',
+#     'http://127.0.0.1:3000',
+# ]
 
 CORS_ALLOW_METHODS = (
     'DELETE',
