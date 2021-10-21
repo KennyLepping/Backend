@@ -21,21 +21,21 @@ class ContactMessageViewset(viewsets.ModelViewSet):
     permission_classes = [IsAdminUser]
 
     # May eventually send emails with Amazon SES wit this code:
-    def create(self, request, *args, **kwargs):
-        serializer = self.get_serializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        send_mail(
-            'Message from Contact Form',
-            f"Email: {request.data.get('email')}\
-            \nName: {request.data.get('name')}\
-            \n\nMessage:\n{request.data.get('message')}\n",
-            '"Kenny\'s Contact Form" <kennylepping@kennylepping.com>',
-            ['kennylepping@gmail.com']
-        )
-        self.perform_create(serializer)
-        headers = self.get_success_headers(serializer.data)
-        # Can send custom responses to the frontend here
-        return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+    # def create(self, request, *args, **kwargs):
+    #     serializer = self.get_serializer(data=request.data)
+    #     serializer.is_valid(raise_exception=True)
+    #     send_mail(
+    #         'Message from Contact Form',
+    #         f"Email: {request.data.get('email')}\
+    #         \nName: {request.data.get('name')}\
+    #         \n\nMessage:\n{request.data.get('message')}\n",
+    #         '"Kenny\'s Contact Form" <kennylepping@kennylepping.com>',
+    #         ['kennylepping@gmail.com']
+    #     )
+    #     self.perform_create(serializer)
+    #     headers = self.get_success_headers(serializer.data)
+    #     # Can send custom responses to the frontend here
+    #     return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
 
 
 class ProjectViewset(viewsets.ModelViewSet):
