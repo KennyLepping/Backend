@@ -12,13 +12,13 @@ class HeroViewset(viewsets.ModelViewSet):
     queryset = Hero.objects.all()
     serializer_class = HeroSerializer
     lookup_field = 'slug'
-    # permission_classes = [IsAdminUser]
+    permission_classes = [IsAdminUser]
 
 
 class ContactMessageViewset(viewsets.ModelViewSet):
     serializer_class = ContactMessageSerializer
     queryset = ContactMessage.objects.all()
-    # permission_classes = [IsAdminUser]
+    permission_classes = [IsAdminUser]
 
     # May eventually send emails with Amazon SES wit this code:
     # def create(self, request, *args, **kwargs):
@@ -41,4 +41,4 @@ class ContactMessageViewset(viewsets.ModelViewSet):
 class ProjectViewset(viewsets.ModelViewSet):
     serializer_class = ProjectSerializer
     queryset = Project.objects.all()
-    # permission_classes = [IsAdminUser]
+    permission_classes = [IsAdminUser]
