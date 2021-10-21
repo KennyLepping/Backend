@@ -1,9 +1,9 @@
 from .base import *
-# from os import getenv
+from os import getenv
 
 DEBUG = True
 
-ALLOWED_HOSTS = ["kennyleppingapi.com"]
+ALLOWED_HOSTS = ["kennyleppingapi.com", "www.kennyleppingapi.com", "52.71.160.175"]
 
 SECRET_KEY = getenv('SECRET_KEY')
 print(getenv('SECRET_KEY'))
