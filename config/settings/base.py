@@ -47,6 +47,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.RemoteUserMiddleware',
 ]
 
+
+
 ROOT_URLCONF = 'config.urls'
 
 TEMPLATES = [
@@ -64,6 +66,8 @@ TEMPLATES = [
         },
     },
 ]
+
+STATIC_URL = '/static/' # Remove this
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
