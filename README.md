@@ -1,4 +1,4 @@
-Environment variables in Django Lightsail instances are stored in 
+Environment variables in Django Lightsail instances are stored in
 cd /opt/bitnami/scripts/apache-env.sh at the bottom and make sure to run
 source /opt/bitnami/scripts/apache-env.sh so Django looks for the env variables
 there
@@ -15,13 +15,15 @@ sudo /opt/bitnami/ctlscript.sh restart apache
 
 sudo pip install -r requirements.txt fixed importing pip packages breaking the server
 
-
 New superuser is kennylightsail
 !iV4p@b$awe!rakI_r6w
 
 Generated token fa76a0f8bb12b546fa56652bc7b667d15c68df56 for user kennylightsail
 
-
+Bitnami-ssl.conf and Bitnami.conf need this:
 <IfModule mod_headers.c>
 Header set Access-Control-Allow-Headers "Authorization"
-    </IfModule>
+</IfModule>
+
+And check:
+https://community.bitnami.com/t/aws-lightsail-django-authentication-credentials-were-not-provided/100382

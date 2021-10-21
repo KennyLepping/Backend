@@ -3,8 +3,10 @@ boto3==1.18.63
 botocore==1.21.63
 Django==3.2.8
 django-cors-headers==3.10.0
+django-ses==2.3.0
 django-storages==1.12.2
 djangorestframework==3.12.4
+future==0.18.2
 jmespath==0.10.0
 Pillow==8.4.0
 psycopg2==2.9.1
