@@ -162,9 +162,9 @@ AWS_S3_CUSTOM_DOMAIN = 'd28gmzqzeakcc8.cloudfront.net'
 # Use Cloudfront eventually, some other CDN, etc.
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-# CORS_ALLOW_CREDENTIALS = True
-# ACCESS_CONTROL_ALLOW_HEADERS = True
-# CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
+ACCESS_CONTROL_ALLOW_HEADERS = True
+CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ALLOWED_ORIGINS = [
     'https://www.kennylepping.com',
@@ -172,5 +172,36 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
     'http://127.0.0.1:3000',
 ]
+
+CORS_ALLOW_METHODS = (
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+)
+
+CSRF_TRUSTED_ORIGINS = (
+    'https://www.kennylepping.com',
+    'http://localhost:3000'
+)
+
+CORS_ORIGIN_WHITELIST = (
+    'https://www.kennylepping.com',
+    'http://localhost:3000'
+)
+
+CORS_ALLOW_HEADERS = (
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+)
 
 # EMAIL_BACKEND = 'django_ses.SESBackend'
