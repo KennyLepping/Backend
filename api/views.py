@@ -20,7 +20,7 @@ class ContactMessageViewset(viewsets.ModelViewSet):
     queryset = ContactMessage.objects.all()
     permission_classes = [IsAdminUser]
 
-    # May eventually send emails with Amazon SES wit this code:
+    # This works with Lightsail
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
