@@ -20,10 +20,14 @@ New superuser is kennylightsail
 
 Generated token fa76a0f8bb12b546fa56652bc7b667d15c68df56 for user kennylightsail
 
-Bitnami-ssl.conf and Bitnami.conf need this:
+Bitnami-ssl.conf and Bitnami.conf need this (May only need to edit Bitnami-ssl.conf if using an SSL Certificate):
 <IfModule mod_headers.c>
-Header set Access-Control-Allow-Headers "*"
+Header set Access-Control-Allow-Origin "*"
+Header set Access-Control-Allow-Methods "GET, OPTIONS, POST"
+Header set Access-Control-Allow-Headers "origin, x-requested-with, content-type, accept, Authorization"
 </IfModule>
+
+When debugging can use: Header set Access-Control-Allow-Headers "*" 
 
 And check:
 https://community.bitnami.com/t/aws-lightsail-django-authentication-credentials-were-not-provided/100382
