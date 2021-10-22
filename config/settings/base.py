@@ -187,10 +187,10 @@ CSRF_TRUSTED_ORIGINS = (
     'http://localhost:3000'
 )
 
-CORS_ORIGIN_WHITELIST = (
-    'https://www.kennylepping.com',
-    'http://localhost:3000'
-)
+# CORS_ORIGIN_WHITELIST = (
+#     'https://www.kennylepping.com',
+#     'http://localhost:3000'
+# )
 
 CORS_ALLOW_HEADERS = (
     'accept',
@@ -204,4 +204,4 @@ CORS_ALLOW_HEADERS = (
     'x-requested-with',
 )
 
-# EMAIL_BACKEND = 'django_ses.SESBackend'
+EMAIL_BACKEND = 'django_ses.SESBackend'

@@ -22,7 +22,7 @@ Generated token fa76a0f8bb12b546fa56652bc7b667d15c68df56 for user kennylightsail
 
 Bitnami-ssl.conf and Bitnami.conf need this:
 <IfModule mod_headers.c>
-Header set Access-Control-Allow-Headers "Authorization"
+Header set Access-Control-Allow-Headers "*"
 </IfModule>
 
 And check:
