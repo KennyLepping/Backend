@@ -27,3 +27,8 @@ Header set Access-Control-Allow-Headers "Authorization"
 
 And check:
 https://community.bitnami.com/t/aws-lightsail-django-authentication-credentials-were-not-provided/100382
+
+
+TODO: Make npm run deploy exclude deleting certain directories
+
+Go here for the set up after using the bncert-tool: C:\Users\kenny\OneDrive\Desktop\LightsailSSLNotes
