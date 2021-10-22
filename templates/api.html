@@ -2,5 +2,6 @@
     {% load static %}
     {% block style %}
     {{ block.super }}
-    <link rel="icon" href="{% static 'rest_framework/docs/img/favicon.ico' %}" />
+    {% comment %} <link rel="icon" href="{% static 'rest_framework/docs/img/favicon.ico' %}" /> {% endcomment %}
+    <link rel="icon" href="https://d28gmzqzeakcc8.cloudfront.net/static/rest_framework/docs/img/favicon.ico" />
 {% endblock %}
