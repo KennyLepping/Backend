@@ -35,6 +35,7 @@ class Project(models.Model):
     # media/project_images/my_project.png or whatever
     image = models.ImageField(upload_to='project_images/', blank=True)
     secondary_image = models.ImageField(upload_to='project_images/', blank=True)
+    is_logo_image = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name
