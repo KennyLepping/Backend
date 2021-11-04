@@ -43,5 +43,5 @@ class ProjectSerializer(serializers.ModelSerializer):
             'file',
             'image',
             'secondary_image',
-            'is_logo_image'
+            'has_logo_image'
         ]
